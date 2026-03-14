@@ -44,16 +44,6 @@ pipeline {
                 sh 'docker build -t chandra9523/hello-ci-cd:latest .'
             }
         }
-        stage('Docker Login') {
-            steps {
-                 withCredentials([usernamePassword(credentialsId: 'dockerhub',
-                 usernameVariable: 'cbdocker2525',
-                 passwordVariable: 'dckr_pat_EogwUsZ9OvMqxVB8w02ftJTLa0s')]) {
-
-            sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
-        }
-    }
-}
 
         stage('Push Docker Image') {
             steps {
