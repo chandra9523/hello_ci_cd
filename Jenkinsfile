@@ -48,7 +48,7 @@ pipeline {
             steps {
                  withCredentials([usernamePassword(credentialsId: 'dockerhub',
                  usernameVariable: 'cbdocker2525',
-                 passwordVariable: 'Chandu@1630')]) {
+                 passwordVariable: 'dckr_pat_EogwUsZ9OvMqxVB8w02ftJTLa0s')]) {
 
             sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
         }
@@ -57,7 +57,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push chandra9523/hello-ci-cd:latest'
+                sh 'docker push cbdocker2525/hello-ci-cd:latest'
             }
         }
 
