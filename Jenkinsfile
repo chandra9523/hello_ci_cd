@@ -37,5 +37,20 @@ pipeline {
                 '''
             }
         }
+        
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t chandra9523/hello-ci-cd:latest .'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                sh 'docker push chandra9523/hello-ci-cd:latest'
+            }
+        }
+
+    
     }
 }
