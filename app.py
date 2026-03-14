@@ -1,7 +1,5 @@
-from fastapi import FastAPI
+def hello():
+    return "hello chandra"
 
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello World from CI/CD Pipeline"}
+if __name__ =="__main__":
+    print(hello())
